@@ -1,23 +1,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Us</title>
+    <title>Contact Us - CollegeMS</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            background:#f5f7fa;
+        }
+
+        header{
+            background:#198754;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        .container{
+            max-width:1000px;
+            margin:60px auto;
+            padding:20px;
+        }
+
+        .contact-box{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 5px 20px rgba(0,0,0,.1);
+        }
+
+        .contact-box h2{
+            text-align:center;
+            color:#198754;
+            margin-bottom:30px;
+        }
+
+        .info{
+            margin-bottom:20px;
+            font-size:18px;
+        }
+
+        .info strong{
+            color:#198754;
+        }
+
+        form{
+            margin-top:30px;
+        }
+
+        input,
+        textarea{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:1px solid #ddd;
+            border-radius:8px;
+        }
+
+        button{
+            background:#198754;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#146c43;
+        }
+
+        footer{
+            background:#111827;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:50px;
+        }
+
+    </style>
+
 </head>
 <body>
 
-<section style="padding:80px">
+<header>
+    <h1>Contact CollegeMS</h1>
+</header>
 
-    <h1>Contact Us</h1>
+<div class="container">
 
-    <br>
+    <div class="contact-box">
 
-    <p>Email : admin@collegems.com</p>
+        <h2>Get In Touch</h2>
 
-    <p>Phone : +91 9876543210</p>
+        <div class="info">
+            <strong>Email:</strong> admin@collegems.com
+        </div>
 
-    <p>Address : Pune, Maharashtra</p>
+        <div class="info">
+            <strong>Phone:</strong> +91 9876543210
+        </div>
 
-</section>
+        <div class="info">
+            <strong>Address:</strong> Pune, Maharashtra, India
+        </div>
+
+        <form>
+
+            <input type="text"
+                   placeholder="Your Name">
+
+            <input type="email"
+                   placeholder="Your Email">
+
+            <textarea rows="5"
+                      placeholder="Your Message"></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 College Management System
+</footer>
 
 </body>
 </html>
