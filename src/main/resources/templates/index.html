@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>College Management System</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* Navbar */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#4da6ff;
+}
+
+/* Hero Section */
+
+.hero{
+    height:100vh;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)
+        ),
+        url('/static/images/college.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.overlay{
+    max-width:850px;
+    color:white;
+}
+
+.overlay h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.overlay p{
+    font-size:1.3rem;
+    margin-bottom:35px;
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.btn{
+    padding:14px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#0d6efd;
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:black;
+}
+
+/* Features */
+
+.features{
+    padding:100px 80px;
+    background:#f5f7fa;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+/* Footer */
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2>CollegeMS</h2>
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="overlay">
+
+        <h1>
+            Empowering Education Through Technology
+        </h1>
+
+        <p>
+            Manage Students, Faculty, Attendance,
+            Courses, Results and Academic Performance
+            with one integrated College Management System.
+        </p>
+
+        <div class="buttons">
+            <a href="/register" class="btn btn-primary">
+                Register
+            </a>
+
+            <a href="/login" class="btn btn-secondary">
+                Login
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="card">
+        <h3>Student Management</h3>
+        <p>Manage student records easily.</p>
+    </div>
+
+    <div class="card">
+        <h3>Faculty Management</h3>
+        <p>Manage faculty details and departments.</p>
+    </div>
+
+    <div class="card">
+        <h3>Attendance</h3>
+        <p>Track attendance efficiently.</p>
+    </div>
+
+    <div class="card">
+        <h3>Results</h3>
+        <p>Generate reports and marksheets.</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 College Management System</p>
+</footer>
+
+</body>
+</html>
