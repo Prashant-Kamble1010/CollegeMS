@@ -9,7 +9,6 @@ services:
     environment:
 
       MYSQL_ROOT_PASSWORD: root
-
       MYSQL_DATABASE: college_db
 
     ports:
@@ -39,9 +38,7 @@ services:
     environment:
 
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/college_db
-
       SPRING_DATASOURCE_USERNAME: root
-
       SPRING_DATASOURCE_PASSWORD: root
 
     restart: always
