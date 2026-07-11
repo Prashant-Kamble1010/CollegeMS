@@ -1,4 +1,12 @@
+package com.example.login_Validation.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ContactController {
@@ -21,13 +29,15 @@ public class ContactController {
         mail.setText(
                 "Name : " + name +
                         "\nEmail : " + email +
-                        "\nMessage : " + message);
+                        "\nMessage : " + message
+        );
 
         mailSender.send(mail);
 
         model.addAttribute(
                 "success",
-                "Message Sent Successfully");
+                "Message Sent Successfully"
+        );
 
         return "contact";
     }
