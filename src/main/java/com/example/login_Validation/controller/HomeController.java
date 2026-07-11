@@ -1,5 +1,7 @@
 package com.example.login_Validation.controller;
 
+import org.springframework.ui.Model;
+import com.example.login_Validation.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -18,6 +20,13 @@ public class HomeController {
 
     @GetMapping("/register")
     public String register() {
+        return "register";
+    }
+    @GetMapping("/register")
+    public String register(Model model) {
+
+        model.addAttribute("user", new User());
+
         return "register";
     }
 
