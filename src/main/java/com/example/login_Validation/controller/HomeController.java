@@ -19,10 +19,6 @@ public class HomeController {
     }
 
     @GetMapping("/register")
-    public String register() {
-        return "register";
-    }
-    @GetMapping("/register")
     public String register(Model model) {
 
         model.addAttribute("user", new User());
