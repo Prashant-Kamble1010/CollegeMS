@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Student Registration</title>
 
@@ -54,22 +54,39 @@ button{
 
         <h2>Student Registration</h2>
 
-        <form action="/saveUser" method="post">
+        <form action="/saveUser"
+              method="post"
+              th:object="${user}">
 
             <input type="text"
-                   name="name"
-                   placeholder="Full Name"
-                   required>
+                   th:field="*{name}"
+                   placeholder="Full Name">
+
+            <span style="color:red"
+                  th:errors="*{name}">
+    </span>
+
+            <br><br>
 
             <input type="email"
-                   name="email"
-                   placeholder="Email"
-                   required>
+                   th:field="*{email}"
+                   placeholder="Email">
+
+            <span style="color:red"
+                  th:errors="*{email}">
+    </span>
+
+            <br><br>
 
             <input type="password"
-                   name="password"
-                   placeholder="Password"
-                   required>
+                   th:field="*{password}"
+                   placeholder="Password">
+
+            <span style="color:red"
+                  th:errors="*{password}">
+    </span>
+
+            <br><br>
 
             <button type="submit">
                 Register
