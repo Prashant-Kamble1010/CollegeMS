@@ -33,7 +33,6 @@ public class ContactController {
         );
 
         mailSender.send(mail);
-
         model.addAttribute(
                 "success",
                 "Message Sent Successfully"
