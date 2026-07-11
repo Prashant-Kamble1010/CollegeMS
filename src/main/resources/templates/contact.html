@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Contact Us - CollegeMS</title>
 
@@ -101,33 +101,45 @@
         <h2>Get In Touch</h2>
 
         <div class="info">
-            <strong>Email:</strong> admin@collegems.com
+            <strong>Email:</strong> prashantkamble4208@gmail.com
         </div>
 
         <div class="info">
-            <strong>Phone:</strong> +91 9876543210
+            <strong>Phone:</strong> +91 9860883426
         </div>
 
         <div class="info">
             <strong>Address:</strong> Pune, Maharashtra, India
         </div>
 
-        <form>
+        <form action="/sendMessage" method="post">
 
             <input type="text"
-                   placeholder="Your Name">
+                   name="name"
+                   placeholder="Your Name"
+                   required>
 
             <input type="email"
-                   placeholder="Your Email">
+                   name="email"
+                   placeholder="Your Email"
+                   required>
 
-            <textarea rows="5"
-                      placeholder="Your Message"></textarea>
+            <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="Your Message"
+                    required>
+    </textarea>
 
             <button type="submit">
                 Send Message
             </button>
 
         </form>
+
+        <p style="color:green;"
+           th:text="${success}">
+        </p>
 
     </div>
 
