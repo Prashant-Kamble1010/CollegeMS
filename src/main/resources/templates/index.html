@@ -51,16 +51,9 @@
         /* ── Hero Section ── */
         .hero {
             height: 100vh;
-
-            /* ✅ FIXED: correct lowercase path matching your file college.jpg */
-            background-image:
-                    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                    url("/images/college.jpg");
-
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -106,6 +99,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
+            background: #0b5ed7;
         }
 
         .btn-secondary {
@@ -140,8 +134,19 @@
             transform: translateY(-10px);
         }
 
-        .card h3 {
+        .card .icon {
+            font-size: 2.5rem;
             margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
         }
 
         /* ── Footer ── */
@@ -156,17 +161,17 @@
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
-                flex-direction: column;
+                flex-wrap: wrap;
                 gap: 10px;
             }
 
             nav a {
-                margin-left: 15px;
+                margin-left: 12px;
                 font-size: 14px;
             }
 
             .overlay h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .overlay p {
@@ -191,7 +196,6 @@
     <div class="logo">
         <h2>CollegeMS</h2>
     </div>
-
     <nav>
         <a href="/">Home</a>
         <a href="/about">About Us</a>
@@ -202,7 +206,14 @@
 </header>
 
 <!-- ── Hero ── -->
-<section class="hero">
+<!--
+    ✅ FIX: Use th:with to resolve @{} URL first into a variable,
+    then use that variable inside th:style string
+-->
+<section class="hero"
+         th:with="imgUrl=@{/images/college.jpg}"
+         th:style="'background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + ${imgUrl} + ');'">
+
     <div class="overlay">
         <h1>Empowering Education Through Technology</h1>
         <p>
@@ -215,31 +226,41 @@
             <a href="/login" class="btn btn-secondary">Login</a>
         </div>
     </div>
+
 </section>
 
 <!-- ── Features ── -->
 <section class="features">
+
     <div class="card">
-        <h3>🎓 Student Management</h3>
-        <p>Manage student records easily.</p>
+        <div class="icon">🎓</div>
+        <h3>Student Management</h3>
+        <p>Manage student records, enrollment and personal details easily.</p>
     </div>
+
     <div class="card">
-        <h3>👨‍🏫 Faculty Management</h3>
-        <p>Manage faculty details and departments.</p>
+        <div class="icon">👨‍🏫</div>
+        <h3>Faculty Management</h3>
+        <p>Manage faculty details, departments and assignments.</p>
     </div>
+
     <div class="card">
-        <h3>📋 Attendance</h3>
-        <p>Track attendance efficiently.</p>
+        <div class="icon">📋</div>
+        <h3>Attendance</h3>
+        <p>Track and manage daily attendance efficiently.</p>
     </div>
+
     <div class="card">
-        <h3>📊 Results</h3>
-        <p>Generate reports and marksheets.</p>
+        <div class="icon">📊</div>
+        <h3>Results</h3>
+        <p>Generate reports, marksheets and academic performance data.</p>
     </div>
+
 </section>
 
 <!-- ── Footer ── -->
 <footer>
-    <p>© 2027 College Management System</p>
+    <p>© 2027 College Management System. All Rights Reserved.</p>
 </footer>
 
 </body>
