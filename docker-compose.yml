@@ -1,42 +1,32 @@
 services:
 
   mysql:
-
     image: mysql:8.0
-
     container_name: college-mysql
 
     environment:
-
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: college_db
 
     ports:
-
       - "3307:3306"
 
     volumes:
-
       - mysql_data:/var/lib/mysql
 
     restart: always
 
   springboot-app:
-
-    build: .
-
+    image: govindhake/college-crud-cicd-springboot-app:latest
     container_name: college-app
 
     ports:
-
       - "8080:8080"
 
     depends_on:
-
       - mysql
 
     environment:
-
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/college_db
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
@@ -44,6 +34,4 @@ services:
     restart: always
 
 volumes:
-
   mysql_data:
- 
