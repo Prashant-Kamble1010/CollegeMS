@@ -4,54 +4,86 @@
     <title>Dashboard</title>
     <style>
         *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
 
-.navbar{
-    background:#ffffff;
-    padding:20px 30px;
+        .navbar{
+            background:#ffffff;
+            padding:20px 30px;
 
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:15px;
 
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
 
-.navbar a{
-    text-decoration:none;
-    color:#000;
-    font-size:17px;
-    font-weight:600;
+        .navbar a{
+            text-decoration:none;
+            color:#000;
+            font-size:17px;
+            font-weight:600;
 
-    padding:10px 15px;
-    border-radius:5px;
+            padding:10px 15px;
+            border-radius:5px;
 
-    transition:0.3s;
-}
+            transition:0.3s;
+        }
 
-.navbar a:hover{
-    background:#f2f2f2;
-    color:#0d6efd;
-}
+        .navbar a:hover{
+            background:#f2f2f2;
+            color:#0d6efd;
+        }
 
-.navbar .active{
-    background:#f2f2f2;
-    color:#0d6efd;
-}
+        .navbar .active{
+            background:#f2f2f2;
+            color:#0d6efd;
+        }
+
+        /* ── Dashboard Hero ── */
+        .dashboard-hero{
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .dashboard-hero h1{
+            font-size: 2.5rem;
+        }
+
+        .dashboard-hero h2{
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-hero {
+                height: 220px;
+            }
+
+            .dashboard-hero h1{
+                font-size: 1.8rem;
+            }
+
+            .dashboard-hero h2{
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-<h1>Welcome</h1>
-
-<h2 th:text="${name}"></h2>
-
-<a href="/">Logout</a>
 <header>
 
     <nav class="navbar">
@@ -85,6 +117,20 @@
     </nav>
 
 </header>
+
+<!-- ── Hero with image ── -->
+<section class="dashboard-hero"
+         th:with="imgUrl=@{/images/college.jpg}"
+         th:style="'background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + ${imgUrl} + ');'">
+
+    <div>
+        <h1>Welcome</h1>
+        <h2 th:text="${name}"></h2>
+    </div>
+
+</section>
+
+<a href="/">Logout</a>
 
 </body>
 </html>
